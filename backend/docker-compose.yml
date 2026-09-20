@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgis/postgis:16-3.4
+    container_name: scraploop-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: scraploop
+      POSTGRES_PASSWORD: scraploop
+      POSTGRES_DB: scraploop
+    ports:
+      - "5432:5432"
+    volumes:
+      - scraploop_pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: scraploop-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+
+volumes:
+  scraploop_pgdata:

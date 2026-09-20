@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "ScrapLoop",
+    "slug": "scraploop",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#F4EFE6"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "ScrapLoop uses your photos so you can show collectors what you're giving away.",
+          "cameraPermission": "ScrapLoop uses your camera so you can photograph scrap for a listing."
+        }
+      ]
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "ScrapLoop uses your location to match you with nearby scrap listings or collectors.",
+        "NSPhotoLibraryUsageDescription": "ScrapLoop uses your photos so you can show collectors what you're giving away.",
+        "NSCameraUsageDescription": "ScrapLoop uses your camera so you can photograph scrap for a listing."
+      }
+    },
+    "android": {
+      "package": "com.scraploop.app",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "CAMERA",
+        "READ_MEDIA_IMAGES"
+      ]
+    }
+  }
+}
